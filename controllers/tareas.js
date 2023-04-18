@@ -3,17 +3,14 @@ const {response, request} = require('express');
 const Tarea = require('../models/tareas');
 
 const getTareas = async (req = request, res = response) => {
-    const id = req.usuario.id;
-    const listaTareas = await Promise.all([
-        Tarea.find({creador:id}).populate('creador', 'nombre apellido')
-    ]);
+    const listaTareas = await
+        Tarea.find()
     res.json({
         listaTareas
     });
 }
 const postTareas = async (req = request, res = response) => {
-    const creador = req.usuario.id;
-    const { nombre, fechaInicio, fechaFinal, descripcion, estado } = req.body;
+    const { nombre, fechaInicio, fechaFinal, descripcion, estado, creador } = req.body;
     const tareaGuardada = new Tarea({nombre, fechaInicio, fechaFinal, descripcion, estado, creador});
     await tareaGuardada.save();
     res.json({

@@ -12,6 +12,14 @@ const getUsuarios = async (req = request, res = response) => {
     });
 
 }
+const getUsuariosId = async (req = request, res = response) => {
+    const {id} = req.params
+    const listaUsuarios = await Usuario.findById(id)
+    res.json({
+        listaUsuarios
+    });
+
+}
 
 const postUsuario = async (req = request, res = response) => {
     const { nombre, edad, correo, password, apellido, ...resto } = req.body;
@@ -48,5 +56,6 @@ module.exports = {
     getUsuarios,
     postUsuario,
     putMiUsuario,
+    getUsuariosId,
     deleteMiUsuario
 }

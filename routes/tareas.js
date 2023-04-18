@@ -7,10 +7,7 @@ const { esFecha } = require('../helpers/db-validators');
 
 const router = Router();
 
-router.get('/mostrar',[
-    validarJWT,
-    validarCampos
-], getTareas);
+router.get('/mostrar', getTareas);
 
 router.post('/agregar/',[
     validarJWT,

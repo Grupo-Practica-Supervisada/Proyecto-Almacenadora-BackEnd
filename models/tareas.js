@@ -22,8 +22,8 @@ const ListaSchema = Schema({
         default: false
     },
     creador:{
-        type: Schema.Types.ObjectId,
-        ref: 'Usuario', 
+        type: String,
+        required: [true, 'El creador es obligatorio'] 
     },
 });
 
