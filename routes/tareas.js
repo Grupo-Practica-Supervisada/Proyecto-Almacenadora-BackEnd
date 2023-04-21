@@ -10,29 +10,29 @@ const router = Router();
 router.get('/mostrar', getTareas);
 
 router.post('/agregar/',[
-    validarJWT,
-    check('nombre', 'El nombre es obligatorio'),
-    check('fechaInicio', 'La fecha inicial es obligatoria').not().isEmpty(),
-    check('fechaInicio', ' Ingresa una fecha inicial valida').custom(esFecha),
-    check('fechaFinal', ' La fecha final es obligatoria').not().isEmpty(),
-    check('fechaFinal', ' Ingresa una fecha final valida').custom(esFecha),
-    check('descripcion', ' La descripcion es obligatoria').not().isEmpty(),
+    // validarJWT,
+    // check('nombre', 'El nombre es obligatorio'),
+    // check('fechaInicio', 'La fecha inicial es obligatoria').not().isEmpty(),
+    // check('fechaInicio', ' Ingresa una fecha inicial valida').custom(esFecha),
+    // check('fechaFinal', ' La fecha final es obligatoria').not().isEmpty(),
+    // check('fechaFinal', ' Ingresa una fecha final valida').custom(esFecha),
+    // check('descripcion', ' La descripcion es obligatoria').not().isEmpty(),
     validarCampos
 ], postTareas);
 
 router.put('/editar/:id',[
-    validarJWT,
-    check('nombre', 'El nombre es obligatorio'),
-    check('fechaInicio', 'La fecha inicial es obligatoria').not().isEmpty(),
-    check('fechaInicio', ' Ingresa una fecha inicial valida').custom(esFecha),
-    check('fechaFinal', ' La fecha final es obligatoria').not().isEmpty(),
-    check('fechaFinal', ' Ingresa una fecha final valida').custom(esFecha),
-    check('descripcion', ' La descripcion es obligatoria').not().isEmpty(),
+    // validarJWT,
+    // check('nombre', 'El nombre es obligatorio'),
+    // check('fechaInicio', 'La fecha inicial es obligatoria').not().isEmpty(),
+    // check('fechaInicio', ' Ingresa una fecha inicial valida').custom(esFecha),
+    // check('fechaFinal', ' La fecha final es obligatoria').not().isEmpty(),
+    // check('fechaFinal', ' Ingresa una fecha final valida').custom(esFecha),
+    // check('descripcion', ' La descripcion es obligatoria').not().isEmpty(),
     validarCampos
 ], putTarea);
 
 router.delete('/eliminar/:id',[
-    validarJWT,
+    // validarJWT,
     check('id', 'El id de la tarea es obligatoria').isMongoId(),
     validarCampos
 ], deleteTarea);
